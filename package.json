@@ -27,7 +27,6 @@
 		"coverage": "vitest run --coverage",
 		"lint": "eslint .",
 		"lint:fix": "pnpm run lint --fix",
-		"publish": "npm publish --access public",
 		"release": "bumpp --all",
 		"releasex": "standard-version",
 		"test": "vitest run",

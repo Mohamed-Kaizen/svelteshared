@@ -1,6 +1,6 @@
 {
     "name": "svelteshareds",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "packageManager": "pnpm@7.12.2",
     "description": "Shared utilities",
     "author": "Mohamed Nesredin<https://github.com/Mohamed-Kaizen>",

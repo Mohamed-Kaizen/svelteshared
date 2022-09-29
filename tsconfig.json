@@ -9,14 +9,17 @@
 		"strictNullChecks": true,
 		"strictFunctionTypes": true,
 		"declaration": true,
+		"declarationDir": "./",
+		"declarationMap": true,
 		"resolveJsonModule": true,
-		"rootDir": ".",
+		"rootDir": "./src/",
+		"outDir": "./",
 		"baseUrl": ".",
 		"skipLibCheck": true,
 		"skipDefaultLibCheck": true,
 		"noUnusedLocals": true,
 		"types": ["vitest", "vitest/globals"]
 	},
-	"include": ["vitest.config.ts", "src"],
-	"exclude": ["node_modules", "**/dist"]
+	"include": ["src/**/*"],
+	"exclude": ["node_modules", "**/dist", "src/**/*.test.ts"]
 }

@@ -1,9 +1,9 @@
-import { build } from "vite"
+import { execSync } from "child_process"
+import fs from "fs-extra"
 import path from "path"
 import { fileURLToPath } from "url"
-import fs from "fs-extra"
 
-import { list_functions, updatePackageJSON } from "./utils.mjs"
+import { list_functions, updatePackageJSON, gitignore } from "./utils.mjs"
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
@@ -19,10 +19,9 @@ async function run() {
 
 	const pkgExports = {
 		".": {
-			import: "./dist/index.js",
-			require: "./dist/index.cjs",
+			import: "./index.js",
+			require: "./index.cjs",
 		},
-		"./*": "./*",
 	}
 
 	for (const module of modules) {
@@ -53,24 +52,17 @@ async function run() {
 			})
 
 			pkgExports[`./${module}`] = {
-				import: `./dist/${module}.js`,
-				require: `./dist/${module}.cjs`,
+				import: `./${module}.js`,
+				require: `./${module}.cjs`,
 			}
 		}
 	}
 
-	libraries.forEach(async (lib) => {
-		await build({
-			build: {
-				outDir: "./dist",
-				lib: {
-					...lib,
-					formats: ["es", "cjs"],
-				},
-				emptyOutDir: false,
-			},
-		})
+	execSync("pnpm run clean && tsc --project tsconfig.json", {
+		stdio: "inherit",
 	})
+
+	await gitignore()
 
 	await updatePackageJSON(pkgExports)
 }

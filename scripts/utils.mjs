@@ -81,3 +81,37 @@ export async function updatePackageJSON(exports) {
 
 	await fs.writeJSON(packageJSONPath, pkg, { spaces: 4 })
 }
+
+export async function gitignore() {
+	let files = await fg("*", {
+		onlyDirectories: true,
+		cwd: DIR_SRC,
+		ignore: ["_*", "dist", "node_modules"],
+	})
+	files = files.map((f) => `**/${f}`)
+
+	const gitignorePath = path.join(DIR_ROOT, ".gitignore")
+
+	const gitignore = await fs.readFile(gitignorePath, "utf-8")
+
+	const lines = gitignore.split("\n")
+
+	const newLines = lines.filter((line) => {
+		return !files.includes(line)
+	})
+
+	await fs.writeFile(gitignorePath, [...newLines, ...files].join("\n"))
+}
+
+export async function clear() {
+	let files = await fg("*", {
+		onlyDirectories: true,
+		cwd: DIR_SRC,
+		ignore: ["_*", "dist", "node_modules"],
+	})
+	files.push("index.d.ts", "index.js", "index.d.ts.map")
+	for (const file of files) {
+		const filepath = path.join(DIR_ROOT, file)
+		await fs.remove(filepath)
+	}
+}

@@ -1,4 +1,4 @@
-import { execSync } from "child_process"
+import { build } from "vite"
 import fs from "fs-extra"
 import path from "path"
 import { fileURLToPath } from "url"
@@ -58,8 +58,17 @@ async function run() {
 		}
 	}
 
-	execSync("pnpm run clean && tsc --project tsconfig.json", {
-		stdio: "inherit",
+	libraries.forEach(async (lib) => {
+		await build({
+			build: {
+				outDir: "./",
+				lib: {
+					...lib,
+					formats: ["es", "cjs"],
+				},
+				emptyOutDir: false,
+			},
+		})
 	})
 
 	await gitignore()

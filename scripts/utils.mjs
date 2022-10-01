@@ -109,7 +109,18 @@ export async function clear() {
 		cwd: DIR_SRC,
 		ignore: ["_*", "dist", "node_modules"],
 	})
-	files.push("index.d.ts", "index.js", "index.d.ts.map")
+	files.push(
+		"index.d.ts",
+		"index.js",
+		"index.cjs",
+		"index.d.ts.map",
+		"dicts.js",
+		"dicts.cjs",
+		"lists.js",
+		"lists.cjs",
+		"math.js",
+		"math.cjs"
+	)
 	for (const file of files) {
 		const filepath = path.join(DIR_ROOT, file)
 		await fs.remove(filepath)

@@ -14,3 +14,4 @@ tsconfig.json
 vitest.config.ts
 .vscode
 node_modules
+scripts

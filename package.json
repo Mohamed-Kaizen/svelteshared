@@ -1,6 +1,6 @@
 {
     "name": "svelteshareds",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "packageManager": "pnpm@7.12.2",
     "description": "Shared utilities",
     "author": "Mohamed Nesredin<https://github.com/Mohamed-Kaizen>",
@@ -19,7 +19,9 @@
     ],
     "type": "module",
     "scripts": {
-        "build": "node scripts/build.mjs",
+        "build": "pnpm run clean && pnpm run build:files && pnpm run build:types",
+        "build:types": "tsc --project tsconfig.json",
+        "build:files": "node scripts/build.mjs",
         "clean": "node scripts/clean.mjs",
         "commit": "cz commit",
         "coverage": "vitest run --coverage",

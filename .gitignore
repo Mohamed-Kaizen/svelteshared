@@ -338,8 +338,15 @@ packages/contributing.md
 index.json
 indexes.json
 index.d.ts
-index.d.ts.map
 index.js
+index.js
+index.cjs
+dicts.cjs
+dicts.js
+lists.cjs
+lists.js
+math.cjs
+math.js
 
 **/adjust_with_unit
 **/args_flat

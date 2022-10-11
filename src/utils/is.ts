@@ -4,6 +4,8 @@ import type { Readable, Writable } from "svelte/store"
 
 export const is_client = typeof window !== "undefined"
 
+export const is_ws = typeof WebSocket !== "undefined"
+
 export const is_def = <T = any>(val?: T): val is T => type(val) !== "undefined"
 
 export const assert = (condition: boolean, ...infos: any[]) => {

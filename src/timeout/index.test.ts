@@ -14,7 +14,7 @@ describe("timeout", () => {
 	})
 
 	it("should work with controls", () => {
-		const { isPending, ready, stop, start } = timeout(10, {
+		const { is_pending, ready, stop, start } = timeout(10, {
 			controls: true,
 		})
 
@@ -24,35 +24,35 @@ describe("timeout", () => {
 
 		expect(get(ready)).toEqual(true)
 
-		expect(get(isPending)).toEqual(false)
+		expect(get(is_pending)).toEqual(false)
 
 		start()
 
 		expect(get(ready)).toEqual(false)
 
-		expect(get(isPending)).toEqual(true)
+		expect(get(is_pending)).toEqual(true)
 	})
 
 	it("should work with controls and immediate", () => {
-		const { isPending, ready, stop, start } = timeout(10, {
+		const { is_pending, ready, stop, start } = timeout(10, {
 			controls: true,
 			immediate: true,
 		})
 
 		expect(get(ready)).toEqual(false)
 
-		expect(get(isPending)).toEqual(true)
+		expect(get(is_pending)).toEqual(true)
 
 		stop()
 
 		expect(get(ready)).toEqual(true)
 
-		expect(get(isPending)).toEqual(false)
+		expect(get(is_pending)).toEqual(false)
 
 		start()
 
 		expect(get(ready)).toEqual(false)
 
-		expect(get(isPending)).toEqual(true)
+		expect(get(is_pending)).toEqual(true)
 	})
 })

@@ -45,7 +45,7 @@ export interface Stoppable {
 	/**
 	 * A writable indicate whether a stop able instance is executing
 	 */
-	isPending: Readable<boolean>
+	is_pending: Readable<boolean>
 
 	/**
 	 * Stop the effect from executing
@@ -62,7 +62,7 @@ export interface Pauseable {
 	/**
 	 * A writable indicate whether a pause able instance is active
 	 */
-	isActive: Readable<boolean>
+	is_active: Readable<boolean>
 
 	/**
 	 * Temporary pause the effect from executing

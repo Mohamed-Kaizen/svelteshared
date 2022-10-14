@@ -37,7 +37,7 @@ export function interval_fn(
 ): Pauseable {
 	const { immediate = true, immediate_callback = false } = options
 
-	const isActive = writable(false)
+	const is_active = writable(false)
 
 	let timer: any = null
 
@@ -49,7 +49,7 @@ export function interval_fn(
 	}
 
 	function pause() {
-		isActive.set(false)
+		is_active.set(false)
 		clean()
 	}
 
@@ -57,7 +57,7 @@ export function interval_fn(
 		if (interval <= 0) {
 			return
 		}
-		isActive.set(true)
+		is_active.set(true)
 		if (immediate_callback) {
 			cb()
 		}
@@ -75,7 +75,7 @@ export function interval_fn(
 	try_on_destroy(pause)
 
 	return {
-		isActive: to_readable(isActive),
+		is_active: to_readable(is_active),
 		pause,
 		resume,
 	}

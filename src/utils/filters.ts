@@ -161,18 +161,18 @@ export function throttle_filter(ms: number, trailing = true, leading = true) {
 export function pauseable_filter(
 	extendFilter: EventFilter = bypassFilter
 ): Pauseable & { eventFilter: EventFilter } {
-	let isActive = true
+	let is_active = true
 
 	function pause() {
-		isActive = false
+		is_active = false
 	}
 	function resume() {
-		isActive = true
+		is_active = true
 	}
 
 	const eventFilter: EventFilter = (...args) => {
-		if (isActive) extendFilter(...args)
+		if (is_active) extendFilter(...args)
 	}
 
-	return { isActive: readable(isActive), pause, resume, eventFilter }
+	return { is_active: readable(is_active), pause, resume, eventFilter }
 }

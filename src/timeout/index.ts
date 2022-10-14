@@ -47,7 +47,7 @@ export function timeout(
 	const controls = timeout_fn(callback ?? noop, interval, options)
 
 	const ready = readable(true, (set) => {
-		controls.isPending.subscribe((value) => set(!value))
+		controls.is_pending.subscribe((value) => set(!value))
 	})
 
 	if (exposeControls) {

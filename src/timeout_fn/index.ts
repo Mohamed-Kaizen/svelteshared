@@ -30,7 +30,7 @@ export function timeout_fn(
 ): Stoppable {
 	const { immediate = true } = options
 
-	const isPending = writable(false)
+	const is_pending = writable(false)
 
 	let timer: number | null = null
 
@@ -42,16 +42,16 @@ export function timeout_fn(
 	}
 
 	function stop() {
-		isPending.set(false)
+		is_pending.set(false)
 		clear()
 	}
 
 	function start(...args: unknown[]) {
 		clear()
-		isPending.set(true)
+		is_pending.set(true)
 		timer = setTimeout(
 			() => {
-				isPending.set(false)
+				is_pending.set(false)
 				timer = null
 				cb(...args)
 			},
@@ -60,7 +60,7 @@ export function timeout_fn(
 	}
 
 	if (immediate) {
-		isPending.set(true)
+		is_pending.set(true)
 		if (is_client) {
 			start()
 		}
@@ -69,7 +69,7 @@ export function timeout_fn(
 	try_on_destroy(stop)
 
 	return {
-		isPending: to_readable(isPending),
+		is_pending: to_readable(is_pending),
 		start,
 		stop,
 	}

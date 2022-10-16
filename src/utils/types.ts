@@ -35,7 +35,7 @@ export type ElementOf<T> = T extends (infer E)[] ? E : never
 /**
  * Any function
  */
-export type Fn = () => void
+export type Fn = (...args: any) => void
 
 export type Awaitable<T> = Promise<T> | T
 

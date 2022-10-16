@@ -377,6 +377,7 @@ math.js
 /toggleable
 /try_get_current_component
 /try_on_destroy
+/tryit
 /type
 /unstore
 /utils

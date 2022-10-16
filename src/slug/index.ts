@@ -54,17 +54,9 @@ export function slug(options: SlugOptions = {}): string {
 
 	let slug = ""
 
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	for (const _ of range(size - 1))
 		slug += chars[Math.floor(Math.random() * chars.length)]
 
 	return options.prefix ? `${options.prefix}-${slug}` : slug
-
-	//     var result           = '';
-	//     var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-	//     var charactersLength = characters.length;
-	//     for ( var i = 0; i < length; i++ ) {
-	//       result += characters.charAt(Math.floor(Math.random() *
-	//  charactersLength));
-	//    }
-	//    return result;
 }

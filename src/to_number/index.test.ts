@@ -1,3 +1,5 @@
+import { describe, expect, it } from "vitest"
+
 import { to_number } from "."
 
 describe("to_number", () => {

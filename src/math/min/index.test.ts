@@ -1,7 +1,9 @@
+import { describe, expect, it } from "vitest"
+
 import { min } from "."
 
 describe("min", () => {
-	test("should be defined", () => {
+	it("should be defined", () => {
 		expect(min).toBeDefined()
 	})
 

@@ -1,3 +1,5 @@
+import { describe, expect, it } from "vitest"
+
 import { create_singleton_promise } from "."
 
 describe("create_singleton_promise", () => {

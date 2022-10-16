@@ -1,7 +1,9 @@
+import { describe, expect, it } from "vitest"
+
 import { precision } from "."
 
 describe("precision", () => {
-	test("should be defined", () => {
+	it("should be defined", () => {
 		expect(precision).toBeDefined()
 	})
 

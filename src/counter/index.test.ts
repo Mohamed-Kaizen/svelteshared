@@ -1,4 +1,6 @@
 import { get } from "svelte/store"
+import { describe, expect, it } from "vitest"
+
 import { counter } from "."
 
 describe("counter", () => {

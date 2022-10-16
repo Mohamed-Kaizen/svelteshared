@@ -1,7 +1,9 @@
+import { describe, expect, it } from "vitest"
+
 import { sum } from "."
 
 describe("sum", () => {
-	test("should be defined", () => {
+	it("should be defined", () => {
 		expect(sum).toBeDefined()
 	})
 

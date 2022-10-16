@@ -1,7 +1,9 @@
+import { describe, expect, it } from "vitest"
+
 import { max } from "."
 
 describe("max", () => {
-	test("should be defined", () => {
+	it("should be defined", () => {
 		expect(max).toBeDefined()
 	})
 

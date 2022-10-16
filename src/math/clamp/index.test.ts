@@ -1,7 +1,9 @@
+import { describe, expect, it } from "vitest"
+
 import { clamp } from "."
 
 describe("clamp", () => {
-	test("should be defined", () => {
+	it("should be defined", () => {
 		expect(clamp).toBeDefined()
 	})
 

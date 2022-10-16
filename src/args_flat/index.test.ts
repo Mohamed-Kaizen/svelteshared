@@ -1,3 +1,5 @@
+import { describe, expect, it } from "vitest"
+
 import { args_flat, MaybeArgs } from "."
 
 describe("args_flat", () => {

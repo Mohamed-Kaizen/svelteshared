@@ -1,4 +1,6 @@
 import { get } from "svelte/store"
+import { describe, expect, it } from "vitest"
+
 import { timeout } from "."
 
 describe("timeout", () => {

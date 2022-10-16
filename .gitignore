@@ -365,6 +365,7 @@ math.js
 /math
 /range
 /sleep
+/slug
 /throttle_fn
 /timeout
 /timeout_fn

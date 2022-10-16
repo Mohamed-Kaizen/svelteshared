@@ -1,4 +1,6 @@
 import { get } from "svelte/store"
+import { describe, expect, it } from "vitest"
+
 import { adjust_with_unit } from "."
 
 describe("adjust_with_unit", () => {

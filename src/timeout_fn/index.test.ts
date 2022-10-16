@@ -1,4 +1,5 @@
 import { writable } from "svelte/store"
+import { describe, expect, it, vitest } from "vitest"
 
 import { timeout_fn } from "."
 import { sleep } from "../sleep"

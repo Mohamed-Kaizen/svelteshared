@@ -1,4 +1,5 @@
 import { get, readable, writable } from "svelte/store"
+import { describe, expect, it } from "vitest"
 
 import { to_writable } from "."
 import { is_writable } from "../utils"

@@ -1,3 +1,5 @@
+import { describe, expect, it } from "vitest"
+
 import { create_event_hook } from "."
 
 describe("create_event_hook", () => {

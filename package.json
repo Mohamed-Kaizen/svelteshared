@@ -38,6 +38,10 @@
             "import": "./index.js",
             "require": "./index.cjs"
         },
+        "./curry": {
+            "import": "./curry.js",
+            "require": "./curry.cjs"
+        },
         "./dicts": {
             "import": "./dicts.js",
             "require": "./dicts.cjs"

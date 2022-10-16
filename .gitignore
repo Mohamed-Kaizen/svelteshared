@@ -347,12 +347,15 @@ lists.cjs
 lists.js
 math.cjs
 math.js
+curry.cjs
+curry.js
 
 /adjust_with_unit
 /args_flat
 /counter
 /create_event_hook
 /create_singleton_promise
+/curry
 /date_format
 /debounce_fn
 /dicts

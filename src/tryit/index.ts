@@ -1,5 +1,6 @@
-import { Fn } from "src/utils"
 import { make_destructurable } from "../make_destructurable"
+
+import type { Fn } from "../utils"
 
 export function tryit(fn: Fn) {
 	return async (...args: any) => {
